@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './router/Home';
 import { RegisterArea } from './router/RegisterArea';
 import { RegisterAge } from './router/RegisterArea/RegisterAge';
@@ -14,7 +14,7 @@ import { RegisterUserName } from './router/RegisterArea/RegisterUserName';
 import { Context } from './router/RegisteredDataContext';
 import { Result } from './router/Result';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: '/',
@@ -58,10 +58,10 @@ const router = createBrowserRouter(
       path: '/result',
       element: <Result />,
     },
-  ],
-  {
-    basename: '/titanic-survival-scoring-client',
-  }
+  ]
+  // {
+  //   basename: '/titanic-survival-scoring-client',
+  // }
 );
 
 createRoot(document.getElementById('root')!).render(
