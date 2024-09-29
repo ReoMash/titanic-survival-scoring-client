@@ -60,7 +60,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: 'titanic-survival-scoring-client',
+    basename: '/titanic-survival-scoring-client',
   }
 );
 
