@@ -14,50 +14,55 @@ import { RegisterUserName } from './router/RegisterArea/RegisterUserName';
 import { Context } from './router/RegisteredDataContext';
 import { Result } from './router/Result';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/register',
+      element: <RegisterArea />,
+      children: [
+        {
+          path: '/register/userName',
+          element: <RegisterUserName />,
+        },
+        {
+          path: '/register/age',
+          element: <RegisterAge />,
+        },
+        {
+          path: '/register/sex',
+          element: <RegisterSex />,
+        },
+        {
+          path: '/register/pclass',
+          element: <RegisterPclass />,
+        },
+        {
+          path: '/register/sibSp',
+          element: <RegisterSibSp />,
+        },
+        {
+          path: '/register/parch',
+          element: <RegisterParch />,
+        },
+        {
+          path: '/register/embarked',
+          element: <RegisterEmbarked />,
+        },
+      ],
+    },
+    {
+      path: '/result',
+      element: <Result />,
+    },
+  ],
   {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/register',
-    element: <RegisterArea />,
-    children: [
-      {
-        path: '/register/userName',
-        element: <RegisterUserName />,
-      },
-      {
-        path: '/register/age',
-        element: <RegisterAge />,
-      },
-      {
-        path: '/register/sex',
-        element: <RegisterSex />,
-      },
-      {
-        path: '/register/pclass',
-        element: <RegisterPclass />,
-      },
-      {
-        path: '/register/sibSp',
-        element: <RegisterSibSp />,
-      },
-      {
-        path: '/register/parch',
-        element: <RegisterParch />,
-      },
-      {
-        path: '/register/embarked',
-        element: <RegisterEmbarked />,
-      },
-    ],
-  },
-  {
-    path: '/result',
-    element: <Result />,
-  },
-]);
+    basename: 'titanic-survival-scoring-client',
+  }
+);
 
 createRoot(document.getElementById('root')!).render(
   <ChakraProvider>
