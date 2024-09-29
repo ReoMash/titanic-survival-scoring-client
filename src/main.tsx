@@ -58,10 +58,10 @@ const router = createHashRouter(
       path: '/result',
       element: <Result />,
     },
-  ]
-  // {
-  //   basename: '/titanic-survival-scoring-client',
-  // }
+  ],
+  {
+    basename: '/titanic-survival-scoring-client',
+  }
 );
 
 createRoot(document.getElementById('root')!).render(
