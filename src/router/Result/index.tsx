@@ -20,9 +20,7 @@ export const Result = () => {
       <Button onClick={() => make_prediction()} colorScheme='blue'>
         See Result
       </Button>
-      {prediction !== undefined ?? (
-        <Text> Survival Prediction : {prediction}%</Text>
-      )}
+      {prediction ?? <Text> Survival Prediction : {prediction}%</Text>}
     </VStack>
   );
 };

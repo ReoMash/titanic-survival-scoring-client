@@ -29,7 +29,9 @@ export const RegisteredDataContext = createContext<RegisterContextType>({
     parch: 0,
     embarked: '0',
   },
-  setRegisteredData: (registeredData: RegisteredData) => {},
+  setRegisteredData: (registeredData: RegisteredData) => {
+    console.log(registeredData);
+  },
 });
 
 export const Context = ({ children }: Props) => {
